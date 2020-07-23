@@ -58,7 +58,7 @@ class LoginUser(Resource):
         help="Password is mandatory"
     )
 
-    def get(self):
+    def post(self):
 
         data = LoginUser.parser.parse_args()
 
