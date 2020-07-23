@@ -57,7 +57,7 @@ class MoodModel(db.Model):
         
 
 
-        return {'great':day_stat.count('great'),'normal':day_stat.count('normal'),'sad':day_stat.count('sad'),
+        return {'great':day_stat.count('GREAT'),'normal':day_stat.count('NORMAL'),'sad':day_stat.count('SAD'),
                 'sleep early':sleep_stat.count('sleep early'),'sleep good':sleep_stat.count('sleep good'),'sleep medium':sleep_stat.count('sleep medium'),'sleep bad':sleep_stat.count('sleep bad'),
                 'family':time_stat.count('family'),'friend':time_stat.count('friend'),
                 'eat healty':eat_stat.count('eat healthy'),'eat_homemade':eat_stat.count('eat homemade'),'eat_fastfood':eat_stat.count('eat fastfood'),'eat soda':eat_stat.count('eat soda'),'eat sweets':eat_stat.count('eat sweets'),
