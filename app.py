@@ -25,7 +25,7 @@ api.add_resource(UserMoodStatus,'/usermood')
 api.add_resource(MoodSuggestion,'/bad')
 api.add_resource(LoginUser,'/login')
 api.add_resource(UserRegister,'/register')
-api.add_resource(UserList,'/getall')
+#api.add_resource(UserList,'/getall')
 
 if __name__ == "__main__":
     from db import db
