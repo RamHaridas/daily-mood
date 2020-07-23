@@ -14,9 +14,7 @@ app.config['PROPAGATE_EXCEPTIONS'] = True
 #app.secret_key = 'jose'    //required only for token generation
 
 api = Api(app)
-@app.before_first_request
-def create_tables():
-    db.create_all()
+
 
 
 #get complete data count to print graph and post mood data
