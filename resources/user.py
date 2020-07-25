@@ -75,7 +75,7 @@ class LoginUser(Resource):
             required=True,
             help='Email is mandatory'
         )
-        data = loc.parser.parse_args()
+        data = loc.parse_args()
         user = UserModel.check_by_username(data['email']) 
         if user:
             return user.json()
