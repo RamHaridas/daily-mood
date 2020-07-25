@@ -59,7 +59,6 @@ class LoginUser(Resource):
     )
 
     def post(self):
-
         data = LoginUser.parser.parse_args()
 
         if (UserModel.find_by_username(data['email'],data['password'])):
@@ -68,14 +67,29 @@ class LoginUser(Resource):
 
         return {'message':'Invalid login credential'}
 
+    def get(self):
+        loc = reqparse.RequestParser()
+        loc.add_argument(
+            'email',
+            type=str,
+            required=True,
+            help='Email is mandatory'
+        )
+        data = loc.parser.parse_args()
+        user = UserModel.check_by_username(data['email']) 
+        if user:
+            return user.json()
+
+        return {'message','User does not exist'} 
+
 
 class UserList(Resource):
-
+    #this function can be called to wake up dyno in the begginning
     def get(self):
 
-       users = []
+       #users = []
 
-       for user in UserModel.query.all():
-           users.append(user.json())
+       #for user in UserModel.query.all():
+        #   users.append(user.json())
 
-       return {'users':users} 
+       return {'message':'waking up the dyno'} 
